@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muj prvni projekt v JavaScriptu</title>
+    <title>Můj první projekt v JavaScriptu</title>
+
+    <!-- Odkazujeme na js -->
     <script src="/js/script.js"></script>
+
 </head>
 <body>
     <header>
@@ -12,17 +15,30 @@
     </header>
     <main>
         <section>
+            
+            <label for="input">Zadej text</label>
             <input type="text" id="input">
-            <button onclick="Add()">Přidej</button>
+            <button onclick="Add()">Přidej</button> 
+            
+            <button onclick="pridatEmoji('💩')">💩</button>
+            <button onclick="pridatEmoji('😂')">😂</button>
+            <button onclick="pridatEmoji('😍')">😍</button>
+            
+    
+            <div id="output"></div>
+
+            <script src="script.js"></script>
+            
         </section>
         <section>
+            
             <p id="output">
 
             </p>
         </section>
     </main>
     <footer>
-        
+
     </footer>
 </body>
 </html>
