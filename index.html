@@ -3,42 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Můj první projekt v JavaScriptu</title>
-
-    <!-- Odkazujeme na js -->
+    <title>Přidání obrázku</title>
+    <link rel="stylesheet" href="index/style.css">
     <script src="/js/script.js"></script>
-
 </head>
 <body>
-    <header>
 
-    </header>
-    <main>
-        <section>
-            
-            <label for="input">Zadej text</label>
-            <input type="text" id="input">
-            <button onclick="Add()">Přidej</button> 
-            
-            <button onclick="pridatEmoji('💩')">💩</button>
-            <button onclick="pridatEmoji('😂')">😂</button>
-            <button onclick="pridatEmoji('😍')">😍</button>
-            
-    
-            <div id="output"></div>
+    <h1>Přidejte obrázek a jeho název</h1>
 
-            <script src="script.js"></script>
-            
-        </section>
-        <section>
-            
-            <p id="output">
+    <!-- Vstup pro URL obrázku -->
+    <input type="text" id="image-url" placeholder="Vložte adresu obrázku" size="50">
 
-            </p>
-        </section>
-    </main>
-    <footer>
+    <!-- Vstup pro název obrázku -->
+    <input type="text" id="image-title" placeholder="Vložte název obrázku" size="50">
 
-    </footer>
+    <!-- Tlačítko pro přidání obrázku -->
+    <button id="add-image-btn">Přidat obrázek</button>
+
+    <!-- Hlavní kontejner pro obrázek a seznam názvů -->
+    <div id="main-container">
+        <!-- Kontejner pro obrázek (bude vystředěn) -->
+        <div id="image-container"></div>
+        
+        <!-- Kontejner pro seznam názvů -->
+        <div id="title-list-container">
+            <h2>Seznam názvů obrázků:</h2>
+            <ul id="title-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

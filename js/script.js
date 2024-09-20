@@ -1,23 +1,29 @@
+window.onload = function() {
+    let count = 0;
 
-let i = 1;
-function Add(){
-    let input = document.getElementById("input"); 
-    let output = document.getElementById("output");
-   
-    console.log("Hodnota v inputu je: ", input);
-    
-    console.log("Hodnota v outputu je: ", output);
+    document.getElementById("add-image-btn").onclick = function() {
+        const url = document.getElementById("image-url").value;
+        const title = document.getElementById("image-title").value;
 
-   
-    output.innerHTML += i + ". " + input.value + "<br>"; 
+        if (!url || !title) {
+            alert("Prosím, vyplňte všechny údaje.");
+            return;
+        }
 
-    i++;
-    const emojiButtons = document.querySelectorAll('.emojiBtn');
+        const img = new Image();
+        img.src = url;
 
-    
-}
-function pridatEmoji(emoji) {
-    
-    document.getElementById('output').textContent += emoji;
-}
+        img.onload = function() {
+            document.getElementById("image-container").innerHTML = ''; document.getElementById("image-container").appendChild(img); 
+        
+            count++;
+            const titleItem = document.createElement("li");
+            titleItem.textContent = count + ". " + title; // Číslování názvu
+            document.getElementById("title-list").appendChild(titleItem); document.getElementById("image-url").value = '';// Přidání do seznamu
+        };
 
+        img.onerror = function() {
+            alert("Obrázek se nepodařilo načíst. Zkontrolujte URL.");
+        };
+    };
+};
